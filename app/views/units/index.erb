@@ -1,0 +1,11 @@
+<h1>The first units I thought of:</h1>
+
+
+  <% Unit.all.each do |u| %>
+  <p><ul>  <%= link_to u.name, unit_path(u) %>: <%= u.scale+" "+u.role %><br>
+    <% u.abilities.each do |a| %>
+    <li>Abilities: <%= link_to a.name, ability_path(a) %> - <%= a.effect %> </li>
+    <% end %>
+  </ul>
+  </p>
+  <% end %>

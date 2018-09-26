@@ -1,0 +1,8 @@
+<h1> <%= @ability.name %></h1><br>
+<h2> <%= @ability.effect %> </h2><br><br>
+Gained by:
+<ul>
+  <% @ability.units.each do |u| %>
+  <li> <%= link_to u.name, unit_path(u) %> </li>
+  <% end %>
+</ul>

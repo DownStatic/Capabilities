@@ -1,0 +1,9 @@
+<h1> <%= @unit.name %> </h1><br>
+<h2> <%= @unit.scale+" "+@unit.role %> </h2><br><br>
+
+Abilities:<br><ul>
+
+<% @unit.abilities.each do |a| %>
+<li>  <%= link_to a.name, ability_path(a) %> - <%= a.effect %></li>
+<% end %>
+</ul>

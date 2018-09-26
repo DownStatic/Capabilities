@@ -1,0 +1,14 @@
+<h1>Editing <%= @ability.name %>: </h1><br><br>
+<%= form_for @ability do |f| %>
+<%= f.label "Ability Name" %>
+<%= f.text_field :name %><br>
+<%= f.label "Effect"%>
+<%= f.text_area :effect %><br>
+<%= f.label "Units with this Ability" %>
+<%= f.collection_check_boxes :unit_ids, Unit.all, :id, :name %><br>
+<%= f.submit %>
+<% end %>
+<p></p>
+<%= form_for @ability, method: :delete do |f| %>
+<%= f.submit "Remove #{@ability.name}" %>
+<% end %>

@@ -1,0 +1,12 @@
+<h1> Create a new Unit: </h1><br><br>
+<%= form_for @unit do |f| %>
+<%= f.label "Unit Name" %>
+<%= f.text_field :name %><br>
+<%= f.label "Role" %>
+<%= f.text_field :role %><br>
+<%= f.label "Scale" %>
+<%= f.text_field :scale %><br>
+<%= f.label "Abilities:" %>
+<%= f.collection_check_boxes :abilities, Ability.all, :id, :name %><br>
+<%= f.submit %>
+<% end %>

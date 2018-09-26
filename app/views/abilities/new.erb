@@ -1,0 +1,13 @@
+<h1> Create a new Ability: </h1><br><br>
+<%= form_with model: @ability do |f| %>
+<%= f.label "Ability Name" %>
+<%= f.text_field :name %><br>
+<%= f.label "Effect" %>
+<%= f.text_field :effect %><br>
+<%= f.label "Units with this Ability:" %>
+<%= f.fields_for :units do |ff| %>
+  <%= ff.text_field :name %><br>
+  <%= ff.text_field :effect %><br>
+<% end %>
+<%= f.submit %>
+<% end %>

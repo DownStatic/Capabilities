@@ -1,0 +1,11 @@
+<h1>Behold all available abilities:</h1>
+
+
+  <% Ability.all.each do |a| %>
+  <p><ul>  <%= link_to a.name, ability_path(a) %>: <%= a.effect %><br>
+    <% a.units.each do |u| %>
+    <li>Gained by: <%= link_to u.name, unit_path(u) %> </li>
+    <% end %>
+  </ul>
+  </p>
+  <% end %>
